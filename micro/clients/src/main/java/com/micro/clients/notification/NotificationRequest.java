@@ -1,4 +1,4 @@
-package com.micro.notification;
+package com.micro.clients.notification;
 
 public record NotificationRequest(
         Integer toCustomerId,
