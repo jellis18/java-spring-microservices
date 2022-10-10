@@ -19,8 +19,8 @@ public record CustomerController(CustomerService customerService) {
         customerService.registerCustomer(customerRegistrationRequest);
     }
 
-    @GetMapping(path="{id}")
-    public Customer getCustomerById(@PathVariable Integer id){
+    @GetMapping(path = "{id}")
+    public Customer getCustomerById(@PathVariable Integer id) {
         return customerService.getCustomerById(id);
     }
 
