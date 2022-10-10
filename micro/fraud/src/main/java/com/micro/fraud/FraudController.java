@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.micro.clients.fraud.FraudCheckresponse;
+
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -17,10 +19,10 @@ public class FraudController {
     private final FraudCheckService fraudCheckService;
 
     @GetMapping(path = "{customerId}")
-    public FraudCheckResponse isFraud(@PathVariable Integer customerId) {
+    public FraudCheckresponse isFraud(@PathVariable Integer customerId) {
         boolean isFraud = fraudCheckService.isFraudulentCustomer(customerId);
         log.info("fraud check request for customer {}", customerId);
-        return new FraudCheckResponse(isFraud);
+        return new FraudCheckresponse(isFraud);
 
     }
 
