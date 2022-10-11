@@ -30,8 +30,10 @@ public class CustomerService {
             throw new IllegalStateException("Customer " + customer.getId() + " is a fraudster");
         }
 
-        notificationClient.sendNotification(new NotificationRequest(customer.getId(), customer.getEmail(),
-                "Customer " + customer.getFirstName() + " " + customer.getLastName() + " is not a fraudster."));
+        notificationClient.sendNotification(new NotificationRequest(
+                customer.getId(),
+                customer.getEmail(),
+                String.format("Welcome %s %s", customer.getFirstName(), customer.getLastName())));
 
     }
 

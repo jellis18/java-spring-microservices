@@ -18,7 +18,7 @@ public class NotificationService {
                 .message(request.message())
                 .toCustomerEmail(request.toCustomerEmail())
                 .toCustomerId(request.toCustomerId())
-                .sender("hello")
+                .sender("micro")
                 .sentAt(LocalDateTime.now())
                 .build();
         notificationRepository.saveAndFlush(notification);
